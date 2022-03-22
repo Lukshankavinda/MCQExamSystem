@@ -144,10 +144,10 @@ li a:hover:not(.active) {
             </tr>
             <?php  while ($rows = mysqli_fetch_assoc($student_exam_result)) { ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$rows['exam_name']?></td>
+                <td><?=$rows['exam_start']?></td>
+                <td><?=$rows['exam_duration']?></td>
+                <td><?=$rows['status']?></td>
             </tr>
             <?php    } ?>
         </table>
