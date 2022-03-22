@@ -68,8 +68,8 @@ li a:hover:not(.active) {
   border: 1px solid black;
 }
  
-input .si{
-  width: 75%;
+.ans{
+  width: 70%;
 }
 
 /* Clear floats after the columns */
@@ -220,41 +220,40 @@ input .si{
     </div>
 
     <div class="column right" >
-        <form >
-
+    <form action="" method="post">
             <input type="text" 
-                   class="question_name si" 
+                   class="question_name ans" 
                    placeholder="Question Name" 
                    name="qname"><br><br>
-            <p>Answers List</p>
+            <p>Answers List</p><br>
 
             <input type="text" 
-                   class="answer1 si" 
+                   class="ans" 
                    placeholder="Answer 01" 
-                   name="answer1">
+                   name="answer1">  	&nbsp;
 
-            <input type="radio" id="answer1" name="Write Answer" value="answer1">  <br>
+            <input type="radio" id="answer1" name="Write Answer" value="answer1">  <br><br>
 
             <input type="text" 
-                   class="answer2 si" 
+                   class="ans" 
                    placeholder="Answer 02" 
-                   name="answer2">
+                   name="answer2"> 	&nbsp;
 
-            <input type="radio" id="answer2" name="Write Answer" value="answer2"> <br>
+            <input type="radio" id="answer2" name="Write Answer" value="answer2"> <br><br>
 
             <input type="text" 
-                   class="answer3 si" 
+                   class="ans" 
                    placeholder="Answer 03" 
-                   name="answer3">
+                   name="answer3"> 	&nbsp;
 
-            <input type="radio" id="answer3" name="Write Answer" value="answer3"> <br>
+            <input type="radio" id="answer3" name="Write Answer" value="answer3"> <br><br>
 
            <input type="text" 
-                   class="answer4 si" 
+                   class="ans" 
                    placeholder="Answer 04" 
-                   name="answer4">
+                   name="answer4"> 	&nbsp;
 
-            <input type="radio" id="answer4" name="Write Answer" value="answer4"> <br>
+            <input type="radio" id="answer4" name="Write Answer" value="answer4"> <br><br>
 
             <button type="submit" class="save_btn" > Save </button>
 
