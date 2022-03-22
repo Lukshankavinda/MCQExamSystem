@@ -184,11 +184,6 @@ li a:hover:not(.active) {
 </body>
 </html>
 
-
-
-</body>
-</html>
-
 <?php 
     }else{
         header("Location: index.php");

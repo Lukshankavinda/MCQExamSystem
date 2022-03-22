@@ -1,8 +1,7 @@
 <?php 
-  session_start();
+  include "db_conn.php";
 
  ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,16 +195,12 @@ li a:hover:not(.active) {
                         <th>Question</th>
                         <th>Answers</th>
                     </tr>
+
                     <tr>
                         <td></td>
                         <td></td>
-                        
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        
-                    </tr>
+
                 </table>
 
             </div>
@@ -220,7 +215,7 @@ li a:hover:not(.active) {
     </div>
 
     <div class="column right" >
-    <form action="" method="post">
+    <form action="php/insert_teacher_single_exam.php" method="post">
             <input type="text" 
                    class="question_name ans" 
                    placeholder="Question Name" 
@@ -232,28 +227,28 @@ li a:hover:not(.active) {
                    placeholder="Answer 01" 
                    name="answer1">  	&nbsp;
 
-            <input type="radio" id="answer1" name="Write Answer" value="answer1">  <br><br>
+            <input type="radio" id="answer1" name="right_answer" value="01">  <br><br>
 
             <input type="text" 
                    class="ans" 
                    placeholder="Answer 02" 
                    name="answer2"> 	&nbsp;
 
-            <input type="radio" id="answer2" name="Write Answer" value="answer2"> <br><br>
+            <input type="radio" id="answer2" name="right_answer" value="02"> <br><br>
 
             <input type="text" 
                    class="ans" 
                    placeholder="Answer 03" 
                    name="answer3"> 	&nbsp;
 
-            <input type="radio" id="answer3" name="Write Answer" value="answer3"> <br><br>
+            <input type="radio" id="answer3" name="right_answer" value="03"> <br><br>
 
            <input type="text" 
                    class="ans" 
                    placeholder="Answer 04" 
                    name="answer4"> 	&nbsp;
 
-            <input type="radio" id="answer4" name="Write Answer" value="answer4"> <br><br>
+            <input type="radio" id="answer4" name="right_answer" value="04"> <br><br>
 
             <button type="submit" class="save_btn" > Save </button>
 
