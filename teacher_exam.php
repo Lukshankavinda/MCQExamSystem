@@ -1,5 +1,7 @@
 <?php 
-	session_start();
+	session_start(); 
+    include "db_conn.php";
+    if (isset($_SESSION['email'] )) {
 
  ?>
 
@@ -154,43 +156,25 @@ li a:hover:not(.active) {
     </div>
 
     <div >
+        <?php include "php/exam_data_check_teacher.php";
+         if (mysqli_num_rows($teacher_exam_result)){ ?>
+
+       
         <table class="tetable">
             <tr>
                 <th>Exam</th>
                 <th>Last Update</th>
                 <th>Status</th>
             </tr>
+            <?php  while ($rows = mysqli_fetch_assoc($teacher_exam_result)) { ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$rows['exam_name']?></td>
+                <td><?=$rows['last_update']?></td>
+                <td><?=$rows['status']?></td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php } ?> 
         </table>
+        <?php    } ?>
 
     </div>
 
@@ -206,5 +190,8 @@ li a:hover:not(.active) {
 </html>
 
 <?php 
+    }else{
+        header("Location: index.php");
+    }
 
  ?>
