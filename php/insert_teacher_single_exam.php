@@ -16,8 +16,25 @@
 
 
       $sql = " INSERT INTO `question` 
-            (`question_id`, `exam_id`, `question`, `answer_1`, `answer_2`, `answer_3`, `answer_4`, `right_answer`, `mark`)
-             VALUES (NULL, '3002','$question', ' $answer1','$answer2',' $answer3',' $answer4',' $right_answer','5')";
+            (   `question_id`,
+                `exam_id`, 
+                `question`, 
+                `answer_1`, 
+                `answer_2`,
+                `answer_3`, 
+                `answer_4`, 
+                `right_answer`, 
+                `mark`  )
+             VALUES (
+                 NULL, 
+                 '3002',
+                 '$question', 
+                 ' $answer1',
+                 '$answer2',
+                 '$answer3',
+                 '$answer4',
+                 '$right_answer',
+                 '5'    )";
 
     if(mysqli_query($conn, $sql)){
 

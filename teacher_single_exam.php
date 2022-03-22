@@ -90,7 +90,7 @@ li a:hover:not(.active) {
 .tetable td {
     border: 1px solid black;
     border-collapse: collapse;
-    height: 25px;
+    height: 2vh;
     padding: 5px 5px 5px 10px;
     margin: 5px ;
 
@@ -187,30 +187,44 @@ li a:hover:not(.active) {
                     <button type="submit" >Add Question</button>
                 </form>
             </div>
+            
 
+            <form > 
             <div >
+           
+            <?php include "php/read_teacher_single_exam.php";
+                  if (mysqli_num_rows($teacher_single_exam_result)){ ?>
+
                 <table class="tetable caption-top">
                     <caption style="text-align:left">Question List</caption>
                     <tr>
                         <th>Question</th>
                         <th>Answers</th>
                     </tr>
-
+                  <?php  while ($rows = mysqli_fetch_assoc($teacher_single_exam_result)) { ?>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td><?=$rows['question']?></td>
+                        <td> <p> 
+                        <b>01 :- </b><?=$rows['answer_1']?> , 
+                        <b>02 :- </b><?=$rows['answer_2']?> , 
+                        <b>03 :- </b><?=$rows['answer_3']?> , 
+                        <b>04 :- </b><?=$rows['answer_4']?> 
+                        </p></td>
                     </tr>
-
+                  <?php } ?> 
                 </table>
+              <?php    } ?>
 
             </div>
 
             <div class="pubpape">
-                <form >
+                
                     
                     <button type="submit" >Publish Paper</button>
-                </form>
+                
             </div>
+            </form>
+
         </div>
     </div>
 
