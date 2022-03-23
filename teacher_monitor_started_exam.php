@@ -47,6 +47,82 @@ li a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
+
+.bottem_button button{
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ec3737;
+    float: right;
+    width: 20%;
+    padding: 10px 5px;
+    margin: 10px 5px;     
+    color: #ffffff;
+}
+
+.leftside {
+    float: left;
+    padding: 10px;
+    height: 90vh;
+    width: 46%;
+}
+
+.rightside {
+    float: right;
+    padding: 10px;
+    height: 90vh;
+    width: 46%;
+}
+
+.top_left {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    height: 40vh;
+    width: 100%;
+}
+
+.bottem_left {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    height: 40vh;
+    width: 100%;   
+}
+
+.top_right {
+    border: 1px solid black;
+    float: right;
+    padding: 10px;
+    margin: 5px;
+    height: 80vh;
+    width: 100%;
+}
+
+.top_right_table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 70%;
+    padding: 5px;
+    margin: 5px ;
+    text-align: left;
+
+}
+.top_right_table td {
+    height: 10px;
+    padding: 10px;
+    margin: 5px ;
+}
+
+.top_right_table tr{
+
+    border: 1px solid black;
+    height: 10px;
+    padding:  10px;
+    margin: 5px ;    
+}
+
 </style>
 </head>
 <body>
@@ -69,6 +145,50 @@ li a:hover:not(.active) {
         </form>
     </div>
 
+    <div class="leftside">
+
+        <div class="top_left">
+                <P>Exam Complited</P>
+        </div><!--  top left-->
+
+        <div class="bottem_left">
+                <p>Exam started time <br>
+                   Exam ending time
+                </p>
+        </div><!-- bottem left  -->
+
+    </div>
+
+    <div class="rightside">
+
+        <div class="top_right">
+            <p>Attending Student list</p> <br><br>
+
+            <table  class="top_right_table" >
+            <tr>
+                <td>Student 1</td>
+                <td>Not Complited</td>
+
+            </tr>
+            <tr>
+                <td>Student 2</td>
+                <td>Complited</td>
+
+            </tr>
+            <tr>
+                <td>Student 3</td>
+                <td>Not Complited</td>
+
+            </tr>
+        </table>
+        </div><!-- right -->
+
+        <div class="bottem_button">
+                <form >
+                    <button type="submit" >End Exam</button>
+                </form>
+        </div>
+    </div>
 
 </div>
 

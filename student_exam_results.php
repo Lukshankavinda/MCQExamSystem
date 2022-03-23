@@ -46,6 +46,40 @@ li a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
+
+.student_exam_result_form_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.question_table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 5px;
+  margin: 5px ;
+  text-align: left;
+
+}
+.question_table td {
+  height: 10px;
+  padding: 10px;
+  margin: 5px ;
+
+}
+
+.question_table tr{
+
+  border: 1px solid black;
+  height: 10px;
+  padding:  10px;
+  margin: 5px ;
+
+}
+
 </style>
 </head>
 <body>
@@ -58,6 +92,8 @@ li a:hover:not(.active) {
 
 <div style="margin-left:14%;padding:0px">
 
+
+
  <div style=" width:100%; ">
         <form style="height: 40px; background-color:LightGray;"
             action="logout.php">
@@ -68,7 +104,36 @@ li a:hover:not(.active) {
         </form>
     </div>
   
+    <div class="student_exam_result_form_div" >
+
+<p>Question</p> <br><br>
+
+            <table  class="question_table" >
+            <tr>
+                <td>Question 1</td>
+                <td>Correct</td>
+
+            </tr>
+            <tr>
+                <td>Question 2</td>
+                <td>Wrong</td>
+
+            </tr>
+            <tr>
+                <td>Question 3</td>
+                <td>Correct</td>
+
+            </tr>
+        </table>
+
 </div>
+<form >
+    <button type="submit" >Close</button>
+</form>
+
+</div>
+
+
 
 </body>
 </html>
