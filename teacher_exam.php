@@ -132,7 +132,7 @@ li a:hover:not(.active) {
 	<div style=" width:100%; ">
         <form style="height: 40px; background-color:LightGray;"
         	  action="logout.php">
-            <button onclick="window.location.herf='logout.php';" 
+            <button type="submit" 
             		style=" float: right; padding: 1px 20px; margin:0px 8px; height: 40px;" 
             		class="btn btn-secondary">Logout
             </button>
@@ -150,7 +150,7 @@ li a:hover:not(.active) {
 
     <div class="tenewexam">
         <form action="teacher_single_exam.php">
-            <button onclick="window.location.herf='teacher_single_exam.php';" >New Exam
+            <button type="submit" >New Exam
             </button>
         </form>
     </div>

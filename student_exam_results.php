@@ -97,7 +97,7 @@ li a:hover:not(.active) {
  <div style=" width:100%; ">
         <form style="height: 40px; background-color:LightGray;"
             action="logout.php">
-            <button onclick="window.location.herf='logout.php';" 
+            <button type="submit"
                 style=" float: right; padding: 1px 20px; margin:0px 8px; height: 40px;" 
                 class="btn btn-secondary">Logout
             </button>

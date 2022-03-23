@@ -82,7 +82,7 @@ li a:hover:not(.active) {
     <div style=" width:100%; ">
       <form style="height: 40px; background-color:LightGray;"
             action="logout.php">
-          <button onclick="window.location.herf='logout.php';" 
+          <button type="submit"
                   style=" float: right; padding: 1px 20px; margin:0px 8px; height: 40px;" 
                   class="btn btn-secondary">Logout
           </button>
@@ -130,13 +130,13 @@ li a:hover:not(.active) {
         
         <form  class="student_exam_form" >
             
-            <input type="radio" id="answer1" name="Write Answer" value="answer1"> &nbsp;&nbsp;
+            <input type="radio" id="answer1" name="Write Answer" value="01"> &nbsp;&nbsp;
             <label for="answer1">  Answer 1 </label> <br>
-            <input type="radio" id="answer2" name="Write Answer" value="answer2"> &nbsp;&nbsp;
+            <input type="radio" id="answer2" name="Write Answer" value="02"> &nbsp;&nbsp;
             <label for="answer2">  Answer 2 </label> <br>
-            <input type="radio" id="answer3" name="Write Answer" value="answer3"> &nbsp;&nbsp;
+            <input type="radio" id="answer3" name="Write Answer" value="03"> &nbsp;&nbsp;
             <label for="answer3">  Answer 3 </label> <br>
-            <input type="radio" id="answer4" name="Write Answer" value="answer4"> &nbsp;&nbsp;
+            <input type="radio" id="answer4" name="Write Answer" value="04"> &nbsp;&nbsp;
             <label for="answer4">  Answer 4 </label> <br>
 
         </form>

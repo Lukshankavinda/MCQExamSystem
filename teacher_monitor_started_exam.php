@@ -138,7 +138,7 @@ li a:hover:not(.active) {
   <div style=" width:100%; ">
         <form style="height: 40px; background-color:LightGray;"
             action="logout.php">
-            <button onclick="window.location.herf='logout.php';" 
+            <button type="submit"
                 style=" float: right; padding: 1px 20px; margin:0px 8px; height: 40px;" 
                 class="btn btn-secondary">Logout
             </button>
@@ -148,7 +148,40 @@ li a:hover:not(.active) {
     <div class="leftside">
 
         <div class="top_left">
-                <P>Exam Complited</P>
+            <P>Exam Complited</P>
+            <h5 class="text-center">Time Left :</h5>
+            <h5 class="text-center" id="demo"></h5>
+    
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+                    
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+                    
+                    // Time calculations for days, hours, minutes and seconds
+                    
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    // Output the result in an element with id="demo"
+                    document.getElementById("demo").innerHTML =  + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                    
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
         </div><!--  top left-->
 
         <div class="bottem_left">
