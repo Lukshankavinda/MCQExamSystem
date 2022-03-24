@@ -129,6 +129,15 @@ li a:hover:not(.active) {
     color: #ffffff;
 
 }
+.pubpape input{
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    float: left;
+    width: 20%;
+    padding: 10px 5px;
+    margin: 10px 5px;
+
+}
 
 .exdate{
 
@@ -218,9 +227,15 @@ li a:hover:not(.active) {
             </div>
 
             <div class="pubpape">
-                
-                    
-                    <button type="submit" >Publish Paper</button>
+              
+                <input type="date" id="start" name="trip-start-1"
+                       value="2022-03-24" 
+                       min="2022-03-01" max="2022-03-31">
+
+                <input type="time" id="start" name="trip-start-2"
+                       value="00-00" >
+
+                <button type="submit" >Publish Paper</button>
                 
             </div>
             </form>

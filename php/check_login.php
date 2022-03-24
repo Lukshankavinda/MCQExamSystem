@@ -32,6 +32,11 @@
 					$_SESSION['password'] = $row['password'] ;
 					$_SESSION['role'] = $row['role'] ;
 
+					$sqltid = "SELECT teacher_id FROM  teacher WHERE teacher_email = '$username'";
+					$resulttid = mysqli_query($conn, $sqltid);
+					$row2  = mysqli_fetch_assoc($resulttid);
+					$_SESSION['teacher_id'] =  $row2['teacher_id'] ;
+
 					header("Location: ../teacher_exam.php");
 
 				}elseif ($row['password'] === $password && $row['role'] == "Student") {
@@ -39,6 +44,11 @@
 					$_SESSION['email'] = $row['email'] ;
 					$_SESSION['password'] = $row['password'] ;
 					$_SESSION['role'] = $row['role'] ;
+
+					$sqlsid = "SELECT student_id FROM  student WHERE student_email = '$username'";
+					$resultsid = mysqli_query($conn, $sqlsid);
+					$row1  = mysqli_fetch_assoc($resultsid);
+					$_SESSION['student_id'] =  $row1['student_id'] ;
 
 					header("Location: ../student_exam.php");
 

@@ -2,7 +2,7 @@
 	session_start(); 
   include "db_conn.php";
   if (isset($_SESSION['email'] )) {
-
+    
  ?>
 
 <!DOCTYPE html>
@@ -133,8 +133,7 @@ li a:hover:not(.active) {
     </div>
 
     <div>
-        <?php include "php/exam_data_check_student.php";
-           if (mysqli_num_rows($student_exam_result)){ ?>
+        
         <table  class="setable" >
             <tr>
                 <th>Exam</th>
@@ -142,7 +141,10 @@ li a:hover:not(.active) {
                 <th>Exam Duration</th>
                 <th>Status</th>
             </tr>
-            <?php  while ($rows = mysqli_fetch_assoc($student_exam_result)) { ?>
+            <?php  include "php/exam_data_check_student.php";
+            if (mysqli_num_rows($student_exam_result)){ 
+
+            while ($rows = mysqli_fetch_assoc($student_exam_result)) { ?>
             <tr>
                 <td><?=$rows['exam_name']?></td>
                 <td><?=$rows['exam_start']?></td>
