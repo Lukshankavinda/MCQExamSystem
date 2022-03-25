@@ -120,3 +120,16 @@ VALUES
 ('13', '3002', 'Chambal river is a part of –', ' Sabarmati basin', 'Ganga basin', 'Narmada basin', ' Godavari basin', '03', '5'), 
 ('14', '3002', ' D.D.T. was invented by?', 'Mosley', ' Rudolf', 'Karl Benz', ' Dalton', '01', '5'), 
 ('15', '3002', 'Volcanic eruptions do not occur in the', 'Baltic sea', ' Black sea', 'Caribbean sea', 'Caspian sea', '01', '5');
+
+
+CREATE TABLE `db_test`.`exam_result_save` ( 
+	`id` INT(3) NOT NULL AUTO_INCREMENT , 
+	`student_id` INT(5) NOT NULL , 
+	`exam_id` INT(5) NOT NULL , 
+	`question_id` INT(5) NOT NULL , 
+	`input_answer` ENUM('01','02','03','04') NOT NULL , 
+	PRIMARY KEY (`id`, `student_id`, `exam_id`, `question_id`)) ENGINE = InnoDB;
+	
+
+	
+

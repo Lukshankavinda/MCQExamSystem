@@ -8,7 +8,7 @@
     exit();
   }
 
-  $abc = "SELECT * FROM  question WHERE exam_id ='3002' ORDER BY question_id ASC";
+  $abc = "SELECT * FROM  question WHERE exam_id ='3001' ORDER BY question_id ASC";
 
   $result = mysqli_query($conn, $abc);
 
@@ -154,7 +154,7 @@ input {
 	if (mysqli_num_rows($result)){ 
     $length = mysqli_num_rows($result); ?>
 
-<form id="regForm" action="">
+<form id="regForm" action="php/insert_data_single_exam.php" method="post">
 
   	<p class="start">Time Left :</p>
   	<h5 class="start" id="demo"></h5>

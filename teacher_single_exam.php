@@ -230,7 +230,7 @@ li a:hover:not(.active) {
               
                 <input type="date" id="start" name="trip-start-1"
                        value="2022-03-24" 
-                       min="2022-03-01" max="2022-03-31">
+                       min="2022-01-01" max="2022-12-31">
 
                 <input type="time" id="start" name="trip-start-2"
                        value="00-00" >
