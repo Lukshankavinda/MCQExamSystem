@@ -1,4 +1,5 @@
 <?php
+    session_start(); 
     include "../db_conn.php";
 
     if($conn === false){
@@ -13,6 +14,7 @@
     $answer3 =  $_REQUEST['answer3'];
     $answer4 =  $_REQUEST['answer4'];
     $right_answer =  $_REQUEST['right_answer'];
+    $exid = $_SESSION['examid'];
 
 
       $sql = " INSERT INTO `question` 
@@ -27,7 +29,7 @@
                 `mark`  )
              VALUES (
                  NULL, 
-                 '3002',
+                 '$exid',
                  '$question', 
                  ' $answer1',
                  '$answer2',

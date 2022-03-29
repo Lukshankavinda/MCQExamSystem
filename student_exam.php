@@ -146,7 +146,10 @@ li a:hover:not(.active) {
 
             while ($rows = mysqli_fetch_assoc($student_exam_result)) { ?>
             <tr>
-                <td><?=$rows['exam_name']?></td>
+                <td><a style="text-decoration: none ; color: inherit;"
+                       href="php/check_exam_student.php?exname=<?=$rows['exam_name']?>">
+                       <?=$rows['exam_name']?>
+                    </a></td>
                 <td><?=$rows['exam_start']?></td>
                 <td><?=$rows['exam_duration']?></td>
                 <td><?=$rows['status']?></td>
@@ -154,7 +157,6 @@ li a:hover:not(.active) {
             <?php    } ?>
         </table>
         <?php   } ?>
-
     </div>
 </div>
 

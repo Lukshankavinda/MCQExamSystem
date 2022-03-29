@@ -157,7 +157,8 @@ li a:hover:not(.active) {
 
     <div >
         <?php include "php/exam_data_check_teacher.php";
-         if (mysqli_num_rows($teacher_exam_result)){ ?>
+         if (mysqli_num_rows($teacher_exam_result)){ 
+            $length = mysqli_num_rows($teacher_exam_result);  ?>
 
        
         <table class="tetable">
@@ -166,9 +167,13 @@ li a:hover:not(.active) {
                 <th>Last Update</th>
                 <th>Status</th>
             </tr>
-            <?php  while ($rows = mysqli_fetch_assoc($teacher_exam_result)) { ?>
+            <?php  for ($i=0; $i < $length; $i++) { 
+                        $rows = mysqli_fetch_assoc($teacher_exam_result) ;     ?>
             <tr>
-                <td><?=$rows['exam_name']?></td>
+                <td ><a style="text-decoration: none ; color: inherit;"
+                        href="php/check_exam_teacher.php?exname=<?=$rows['exam_name']?>">
+                        <?=$rows['exam_name']?>
+                     </a></td>
                 <td><?=$rows['last_update']?></td>
                 <td><?=$rows['status']?></td>
             </tr>

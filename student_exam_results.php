@@ -47,37 +47,30 @@ li a:hover:not(.active) {
   color: white;
 }
 
-.student_exam_result_form_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+.leftside {
+    float: left;
+    padding: 10px;
+    height: 90vh;
+    width: 46%;
 }
 
-.question_table{
-  border: 1px solid black;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 5px;
-  margin: 5px ;
-  text-align: left;
 
-}
-.question_table td {
-  height: 10px;
-  padding: 10px;
-  margin: 5px ;
-
+.top_left {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    height: 30vh;
+    width: 100%;
 }
 
-.question_table tr{
-
-  border: 1px solid black;
-  height: 10px;
-  padding:  10px;
-  margin: 5px ;
-
+.bottem_left {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    height: 40vh;
+    width: 100%;   
 }
 
 </style>
@@ -86,54 +79,41 @@ li a:hover:not(.active) {
 
 <ul>
   <li><a href="student_exam.php">Exam</a></li>
-  <li><a href="student_single_exam.php">Single Exam</a></li>
-  <li><a class="active" href="student_exam_results.php">Exam Results</a></li>
+  <li><a >Single Exam</a></li>
+  <li><a class="active" >Exam Results</a></li>
 </ul>
 
 <div style="margin-left:14%;padding:0px">
 
-
-
- <div style=" width:100%; ">
-        <form style="height: 40px; background-color:LightGray;"
-            action="logout.php">
-            <button type="submit"
+  <div style=" width:100%; ">
+    <form style="height: 40px; background-color:LightGray;"
+          action="logout.php">
+        <button type="submit" 
                 style=" float: right; padding: 1px 20px; margin:0px 8px; height: 40px;" 
                 class="btn btn-secondary">Logout
-            </button>
-        </form>
-    </div>
-  
-    <div class="student_exam_result_form_div" >
+        </button>
+    </form>
+  </div>
+<br>
+<div class="container d-flex justify-content-center align-items-center">
 
-<p>Question</p> <br><br>
+		<div class="leftside">
 
-            <table  class="question_table" >
-            <tr>
-                <td>Question 1</td>
-                <td>Correct</td>
+        	<div class="top_left">
+           		<P>Exam Complited</P>
+	        </div><!--  top left-->
+          <br>
+	        <div class="bottem_left">
+	        	<p>Question</p>
+	        </div><!-- bottem left  -->
 
-            </tr>
-            <tr>
-                <td>Question 2</td>
-                <td>Wrong</td>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-secondary" type="button">Closs</button>
+          </div>
 
-            </tr>
-            <tr>
-                <td>Question 3</td>
-                <td>Correct</td>
-
-            </tr>
-        </table>
-
-</div>
-<form >
-    <button type="submit" >Close</button>
-</form>
-
-</div>
-
-
+    	</div>
+				
+	</div>
 
 </body>
 </html>
