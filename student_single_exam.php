@@ -7,9 +7,10 @@
     echo "Connection Failed !";
     exit();
   }
+  $studentid = $_SESSION['studentid'];
+  $examid = $_SESSION['examid'];
 
-  $abc = "SELECT * FROM  question WHERE exam_id ='3001' ORDER BY question_id ASC";
-
+  $abc = "SELECT * FROM  question WHERE exam_id ='$examid' ORDER BY question_id ASC";
   $result = mysqli_query($conn, $abc);
 
  ?>
@@ -135,8 +136,8 @@ input {
 
 <ul>
   <li><a href="student_exam.php">Exam</a></li>
-  <li><a class="active" href="student_single_exam.php">Single Exam</a></li>
-  <li><a href="student_exam_results.php">Exam Results</a></li>
+  <li><a class="active" >Single Exam</a></li>
+  <li><a >Exam Results</a></li>
 </ul>
 
 <div style=" margin-left:14% ; padding:0px ;" >
@@ -150,6 +151,8 @@ input {
           </button>
       </form>
     </div>
+
+    <h5> 	&nbsp;&nbsp; <?=$_SESSION['examname']?> </h5>
     <?php
 	if (mysqli_num_rows($result)){ 
     $length = mysqli_num_rows($result); ?>
@@ -164,15 +167,24 @@ input {
         $rows = mysqli_fetch_assoc($result) ;  ?> 
 
     <div class="tab">
+            <input type="hidden" id="hid_input_stu" 
+                   name="hid_input_stu_<?=$i;?>" value="<?=$studentid?>">
+
+            <input type="hidden" id="hid_input_exam" 
+                   name="hid_input_exam_<?=$i;?>" value="<?=$rows['exam_id']?>">
+
+            <input type="hidden" id="hid_input_ques" 
+                   name="hid_input_ques_<?=$i;?>" value="<?=$rows['question_id']?>">
+
         	<h5> Q : <?=$rows['question']?></h5><br>
           <div style="border: 2px solid #aaaaaa; padding:10px; width: 50%;">
-            &nbsp;&nbsp;<input type="radio" id="answer1" name="Write Answer" value="01"> &nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="radio" id="answer1" name="radio_ans<?=$i;?>" value="01"> &nbsp;&nbsp;
             <label for="answer1">  <?=$rows['answer_1']?> </label> <br> 
-            &nbsp;&nbsp;<input type="radio" id="answer2" name="Write Answer" value="02"> &nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="radio" id="answer2" name="radio_ans<?=$i;?>" value="02"> &nbsp;&nbsp;
             <label for="answer2">  <?=$rows['answer_2']?> </label> <br>
-            &nbsp;&nbsp;<input type="radio" id="answer3" name="Write Answer" value="03"> &nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="radio" id="answer3" name="radio_ans<?=$i;?>" value="03"> &nbsp;&nbsp;
             <label for="answer3">  <?=$rows['answer_3']?> </label><br>
-            &nbsp;&nbsp;<input type="radio" id="answer4" name="Write Answer" value="04"> &nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="radio" id="answer4" name="radio_ans<?=$i;?>" value="04"> &nbsp;&nbsp;
             <label for="answer4"> <?=$rows['answer_4']?> </label> <br>
           </div>
     </div>
@@ -188,7 +200,7 @@ input {
       </button>
     </div>
     &nbsp;
-    <button type="button" class="btn btn-light">Question</button> 
+    <button type="button" class="btn btn-light" disabled>Question</button> 
     &nbsp;
     <div style="float:right;">
       <button type="button" 

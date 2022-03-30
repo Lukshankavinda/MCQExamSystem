@@ -4,7 +4,11 @@ session_start();
 include "../db_conn.php";
 
 $examname =  $_GET['exname'] ;
+$studentid = $_GET['studentid'] ;
+
 $_SESSION['examname'] =  $_GET['exname'] ;
+$_SESSION['studentid'] =  $_GET['studentid'] ;
+
 
 $sql = "SELECT exam_id FROM  exam WHERE exam_name = '$examname'";
 $result = mysqli_query($conn, $sql);
@@ -24,5 +28,5 @@ elseif( $rowsta['status'] == "Published"){
 }else{
     header("Location: ../student_exam.php");
 }
-   
+
 ?>

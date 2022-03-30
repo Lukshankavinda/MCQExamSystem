@@ -97,21 +97,50 @@ li a:hover:not(.active) {
 <br>
 <div class="container d-flex justify-content-center align-items-center">
 
-		<div class="leftside">
+    <div class="leftside">
 
-        	<div class="top_left">
-           		<P>Exam Complited</P>
-	        </div><!--  top left-->
-          <br>
-	        <div class="bottem_left">
-	        	<p>Question</p>
-	        </div><!-- bottem left  -->
+          <div class="top_left">
+              <P>Exam Complited</P>
+          </div><!--  top left-->
+
+          <div class="bottem_left">
+            <p>Question</p>
+
+            <table class="table ">
+    <?php   
+    //$length = mysqli_num_rows($resulta); ?>
+
+          <tbody>
+            
+    <?php //for ($i=0; $i < $length; $i++) {  ?> 
+
+    <tr><td> <?php
+    //$row1  = mysqli_fetch_assoc($resulta);
+    //$row2  = mysqli_fetch_assoc($resultb); 
+    //if ($row1['right_answer']==$row2['sans']) {
+      //echo $row1['question_id']."Question $i is correct <br>";
+    //}else{
+      //echo $row1['question_id']."Question $i is  wrong <br>";
+    //}?></td></tr>
+    <?php// } ?>				  
+          </tbody>
+        </table>
+
+          </div><!-- bottem left  -->
 
           <div class="d-grid gap-2 d-md-block">
-            <button class="btn btn-secondary" type="button">Closs</button>
-          </div>
+              <form action="index.php" class="inline">
 
-    	</div>
+                  <button class="float-left btn btn-secondary" >Closs</button>
+
+              </form>
+
+            </div>
+
+      </div>
+        
+
+    </div>
 				
 	</div>
 

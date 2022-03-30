@@ -2,6 +2,7 @@
 	session_start(); 
   include "db_conn.php";
   if (isset($_SESSION['email'] )) {
+    $studentid = $_SESSION['student_id'];
     
  ?>
 
@@ -107,9 +108,9 @@ li a:hover:not(.active) {
 <body>
 
 <ul>
-  <li><a class="active" href="student_exam.php">Exam</a></li>
-  <li><a href="student_single_exam.php">Single Exam</a></li>
-  <li><a href="student_exam_results.php">Exam Results</a></li>
+  <li><a class="active" >Exam</a></li>
+  <li><a >Single Exam</a></li>
+  <li><a >Exam Results</a></li>
 </ul>
 
 <div style="margin-left:14%;padding:0px">
@@ -147,7 +148,7 @@ li a:hover:not(.active) {
             while ($rows = mysqli_fetch_assoc($student_exam_result)) { ?>
             <tr>
                 <td><a style="text-decoration: none ; color: inherit;"
-                       href="php/check_exam_student.php?exname=<?=$rows['exam_name']?>">
+                       href="php/check_exam_student.php?exname=<?=$rows['exam_name']?>&studentid=<?=$studentid?>">
                        <?=$rows['exam_name']?>
                     </a></td>
                 <td><?=$rows['exam_start']?></td>

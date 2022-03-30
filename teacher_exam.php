@@ -122,9 +122,9 @@ li a:hover:not(.active) {
 
 
 <ul>
-  <li><a class="active" href="teacher_exam.php">Exam</a></li>
-  <li><a href="teacher_single_exam.php">Single Exam</a></li>
-  <li><a href="teacher_monitor_started_exam.php">Monitor Started Exam</a></li>
+  <li><a class="active">Exam</a></li>
+  <li><a>Single Exam</a></li>
+  <li><a>Monitor Started Exam</a></li>
 </ul>
 
 <div style="margin-left:14%;padding:0px">
@@ -149,7 +149,7 @@ li a:hover:not(.active) {
     </div>
 
     <div class="tenewexam">
-        <form action="teacher_single_exam.php">
+        <form action="new_teacher_single_exam.php">
             <button type="submit" >New Exam
             </button>
         </form>

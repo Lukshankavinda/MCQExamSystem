@@ -1,7 +1,6 @@
 <?php 
-  //session_start();
+  session_start();
   include "db_conn.php";
-  include "php/read_teacher_single_exam.php";
 
  ?>
 <!DOCTYPE html>
@@ -92,7 +91,7 @@ li a:hover:not(.active) {
 .tetable td {
     border: 1px solid black;
     border-collapse: collapse;
-    height: 2vh;
+    height: 5vh;
     padding: 5px 5px 5px 10px;
     margin: 5px ;
 
@@ -171,8 +170,8 @@ li a:hover:not(.active) {
 
 <ul>
   <li><a  href="teacher_exam.php">Exam</a></li>
-  <li><a class="active" href="teacher_single_exam.php">Single Exam</a></li>
-  <li><a href="teacher_monitor_started_exam.php">Monitor Started Exam</a></li>
+  <li><a class="active" >Single Exam</a></li>
+  <li><a>Monitor Started Exam</a></li>
 </ul>
 
 <div style="margin-left:14%;padding:0px">
@@ -188,53 +187,33 @@ li a:hover:not(.active) {
      </div>
     <div class="row">
       <div class="column left" >
-  
         <div class="tebody">
-
-        <h5> 	&nbsp;&nbsp; <?=$_SESSION['examname']?> </h5>
-
-            <div class="addque">
-                <form action="teacher_single_exam.php">
+        <form action="php/check_new_exam_teacher.php" method="post">
+        &nbsp; &nbsp;<input type="text"  name="new_exam_name"  style="width: 40%; ">
+        <div class="addque">
                     <button type="submit" >Add Question</button>
-                </form>
             </div>
-            
-
-            <form > 
             <div >
-           
-            <?php
-                  if (mysqli_num_rows($teacher_single_exam_result)){ ?>
-
                 <table class="tetable caption-top">
                     <caption style="text-align:left">Question List</caption>
                     <tr>
                         <th>Question</th>
                         <th>Answers</th>
                     </tr>
-                  <?php  while ($rows = mysqli_fetch_assoc($teacher_single_exam_result)) { ?>
                     <tr>
-                        <td><?=$rows['question']?></td>
-                        <td> <p> 
-                        <b>01 :- </b><?=$rows['answer_1']?> , 
-                        <b>02 :- </b><?=$rows['answer_2']?> , 
-                        <b>03 :- </b><?=$rows['answer_3']?> , 
-                        <b>04 :- </b><?=$rows['answer_4']?> 
-                        </p></td>
-                    </tr>
-                  <?php } ?> 
+                        <td></td>
+                        <td></td>
+                    </tr>  
                 </table>
-              <?php    } ?>
-
             </div>
 
             <div class="pubpape">
               
-            <input type="datetime-local" id="exam_date" name="exam_date" style="width: 25%; ">
+            <input type="datetime-local" id="edate" name="new_exam_date" style="width: 25%; ">
 
-            <input type="time" id="exam_duration" name="exam_duration">
+            <input type="time" id="duration" name="new_exam_duration">
 
-                <button type="submit" >Publish Paper</button>
+            <button type="button"  disabled>Publish Paper</button>
                 
             </div>
             </form>
@@ -243,7 +222,7 @@ li a:hover:not(.active) {
     </div>
 
     <div class="column right" >
-    <form action="php/insert_teacher_single_exam.php" method="post">
+    <form>
             <input type="text" 
                    class="question_name ans" 
                    placeholder="Question Name" 
@@ -278,7 +257,7 @@ li a:hover:not(.active) {
 
             <input type="radio" id="answer4" name="right_answer" value="04"> <br><br>
 
-            <button type="submit" class="save_btn" > Save </button>
+            <button type="button"  class="save_btn" disabled> Save </button>
 
         </form>
     </div>

@@ -15,5 +15,7 @@
             FROM  question WHERE exam_id ='$exid' ORDER BY question_id ASC";
        
     $teacher_single_exam_result = mysqli_query($conn, $sql);
+
+    $_SESSION['examname'];
         
 ?>
