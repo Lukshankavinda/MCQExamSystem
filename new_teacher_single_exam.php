@@ -1,6 +1,7 @@
 <?php 
   session_start();
   include "db_conn.php";
+  $_SESSION['teacher_id'];
 
  ?>
 <!DOCTYPE html>
@@ -209,7 +210,7 @@ li a:hover:not(.active) {
 
             <div class="pubpape">
               
-            <input type="datetime-local" id="edate" name="new_exam_date" style="width: 25%; ">
+            <input type="datetime-local" id="edate" name="new_exam_date" style="width: 30%; ">
 
             <input type="time" id="duration" name="new_exam_duration">
 

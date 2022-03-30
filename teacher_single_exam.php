@@ -171,8 +171,8 @@ li a:hover:not(.active) {
 
 <ul>
   <li><a  href="teacher_exam.php">Exam</a></li>
-  <li><a class="active" href="teacher_single_exam.php">Single Exam</a></li>
-  <li><a href="teacher_monitor_started_exam.php">Monitor Started Exam</a></li>
+  <li><a class="active" >Single Exam</a></li>
+  <li><a >Monitor Started Exam</a></li>
 </ul>
 
 <div style="margin-left:14%;padding:0px">
@@ -195,14 +195,17 @@ li a:hover:not(.active) {
 
             <div class="addque">
                 <form action="teacher_single_exam.php">
-                    <button type="submit" >Add Question</button>
+                    <button type="button"  disabled >Add Question</button>
                 </form>
             </div>
             
 
-            <form > 
+            <form  action="php/publish_exam_paper.php" method="post"> 
             <div >
-           
+            <input type="hidden" id="hid_input_exam" 
+                   name="hid_input_exam" value="<?=$_SESSION['examid']?>">
+            <input type="hidden" id="hid_input_exam_name" 
+                   name="hid_input_exam_name" value="<?=$_SESSION['examname']?>">       
             <?php
                   if (mysqli_num_rows($teacher_single_exam_result)){ ?>
 
@@ -230,7 +233,7 @@ li a:hover:not(.active) {
 
             <div class="pubpape">
               
-            <input type="datetime-local" id="exam_date" name="exam_date" style="width: 25%; ">
+            <input type="datetime-local" id="exam_date" name="exam_date" style="width: 30%; ">
 
             <input type="time" id="exam_duration" name="exam_duration">
 

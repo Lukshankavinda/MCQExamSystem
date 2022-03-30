@@ -40,7 +40,14 @@
 
     if(mysqli_query($conn, $sql)){
 
-        mysqli_close($conn);
+        date_default_timezone_set('Asia/Kolkata');
+        $date = date('y-m-d h:i:s');
+        
+        $sqlup = " UPDATE exam_status SET last_update = '$date' 
+                   WHERE exam_id = '$exid'";
+
+        mysqli_query($conn, $sqlup);
+
         header("Location: ../teacher_single_exam.php");
     
     

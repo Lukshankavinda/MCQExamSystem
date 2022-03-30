@@ -40,13 +40,12 @@ CREATE TABLE `db_test`.`exam` (
  	`exam_id` INT(5) NOT NULL AUTO_INCREMENT , 
 	`exam_name` VARCHAR(100) NOT NULL , 
 	`exam_start` DATETIME NOT NULL , 
-	`exam_end` DATETIME NOT NULL , 
 	`exam_duration` TIME NOT NULL , 
 	PRIMARY KEY (`exam_id`)) ENGINE = InnoDB;
 	
-INSERT INTO `exam` (`exam_id`, `exam_name`, `exam_start`, `exam_end`, `exam_duration`) 
-VALUES ('3001', 'year End exam', '2022-03-26 09:00:00', '2022-03-26 11:00:00', '00:45:00'), 
-	   ('3002', 'mid year exam', '2022-03-24 10:00:00', '2022-03-24 13:00:00', '00:30:00');	
+INSERT INTO `exam` (`exam_id`, `exam_name`, `exam_start`, `exam_duration`) 
+VALUES ('3001', 'year End exam', '2022-03-26 09:00:00',  '00:45:00'), 
+	   ('3002', 'mid year exam', '2022-03-24 10:00:00',  '00:30:00');	
 ​
 
 CREATE TABLE `db_test`.`exam_status` ( 

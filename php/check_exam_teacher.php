@@ -26,7 +26,7 @@ if ( $rowsta['status'] == "Draft") {
     header("Location: ../teacher_single_exam.php");
 }
 elseif( $rowsta['status'] == "Published"){
-    header("Location: ../teacher_monitor_started_exam.php");
+    header("Location: ../teacher_monitor_started_exam.php?examid=$examid & examname=$examname");
 }else{
     header("Location: ../teacher_exam.php");
 }
