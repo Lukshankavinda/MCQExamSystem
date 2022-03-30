@@ -1,5 +1,20 @@
 <?php 
-  session_start();
+  session_start(); 
+  include "db_conn.php";
+
+  $examid =  $_GET['examid'] ;
+  $studentid = $_GET['studentid'] ;
+
+$sqla = "SELECT question_id, right_answer FROM  question WHERE exam_id ='$examid' 
+         ORDER BY question_id ASC";
+
+$resulta = mysqli_query($conn, $sqla);
+
+$sqlb = "SELECT question_id, input_answer FROM  exam_result_save WHERE exam_id ='$examid' 
+         AND student_id  = '$studentid ' ORDER BY question_id ASC";
+
+$resultb = mysqli_query($conn, $sqlb);
+
 
  ?>
 
@@ -69,7 +84,6 @@ li a:hover:not(.active) {
     float: left;
     padding: 10px;
     margin: 5px;
-    height: 40vh;
     width: 100%;   
 }
 
@@ -108,28 +122,31 @@ li a:hover:not(.active) {
 
             <table class="table ">
     <?php   
-    //$length = mysqli_num_rows($resulta); ?>
+    $length = mysqli_num_rows($resulta); 
+    $length++; ?>
 
           <tbody>
             
-    <?php //for ($i=0; $i < $length; $i++) {  ?> 
+    <?php for ($i=1; $i < $length; $i++) {  ?> 
 
     <tr><td> <?php
-    //$row1  = mysqli_fetch_assoc($resulta);
-    //$row2  = mysqli_fetch_assoc($resultb); 
-    //if ($row1['right_answer']==$row2['sans']) {
-      //echo $row1['question_id']."Question $i is correct <br>";
-    //}else{
-      //echo $row1['question_id']."Question $i is  wrong <br>";
-    //}?></td></tr>
-    <?php// } ?>				  
+    $rowa  = mysqli_fetch_assoc($resulta);
+    $rowb  = mysqli_fetch_assoc($resultb); 
+    if ($rowa['right_answer']==$rowb['input_answer']) {
+      echo "Question $i <p class='text-success' style='display: inline-block;'>
+            &nbsp;&nbsp;&nbsp;&nbsp; <b>correct</b>  </p> <br>";
+    }else{
+      echo "Question $i <p class='text-danger' style='display: inline-block;'>
+            &nbsp;&nbsp;&nbsp;&nbsp; <b>wrong</b>  </p> <br>";
+    }?></td></tr>
+    <?php } ?>				  
           </tbody>
         </table>
 
           </div><!-- bottem left  -->
 
           <div class="d-grid gap-2 d-md-block">
-              <form action="index.php" class="inline">
+              <form action="student_exam.php" class="inline">
 
                   <button class="float-left btn btn-secondary" >Closs</button>
 

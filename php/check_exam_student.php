@@ -23,8 +23,8 @@ $rowsta  = mysqli_fetch_assoc($resultsta);
 if ( $rowsta['status'] == "Pending") {
     header("Location: ../student_single_exam.php");
 }
-elseif( $rowsta['status'] == "Published"){
-    header("Location: ../student_exam_results.php");
+elseif( $rowsta['status'] == "Attended"){
+    header("Location: ../student_exam_results.php?examid=$examid & studentid=$studentid");
 }else{
     header("Location: ../student_exam.php");
 }

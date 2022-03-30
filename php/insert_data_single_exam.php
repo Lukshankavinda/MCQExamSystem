@@ -8,6 +8,7 @@ if (!$conn) {
   exit();
 }
     $examid = $_SESSION['examid'];
+    $studentid  =  $_POST["hid_input_stu_0"];
 
     $sqlget = "SELECT * FROM  question WHERE exam_id ='$examid' ORDER BY question_id ASC";
     $result1 = mysqli_query($conn, $sqlget);
@@ -29,5 +30,11 @@ if (!$conn) {
 
     }
 
+    $sqlup = " UPDATE exam_student_status SET exam_student_status.status = 'Attended' 
+               WHERE student_id = '$studentid' AND exam_id = '$examid' ";
+
+    mysqli_query($conn, $sqlup);
+
+    header("Location: ../student_exam_results.php?examid=$examid & studentid=$studentid");
 
 ?>
