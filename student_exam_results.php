@@ -4,6 +4,7 @@
 
   $examid =  $_GET['examid'] ;
   $studentid = $_GET['studentid'] ;
+  $_SESSION['examname'];
 
 $sqla = "SELECT question_id, right_answer FROM  question WHERE exam_id ='$examid' 
          ORDER BY question_id ASC";
@@ -108,7 +109,11 @@ li a:hover:not(.active) {
         </button>
     </form>
   </div>
+
+  <h5> 	&nbsp;&nbsp; <?=$_SESSION['examname']?> </h5>
+
 <br>
+
 <div class="container d-flex justify-content-center align-items-center">
 
     <div class="leftside">

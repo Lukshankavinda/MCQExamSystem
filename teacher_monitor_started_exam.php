@@ -1,5 +1,14 @@
 <?php 
-  session_start();
+  session_start(); 
+  include "db_conn.php";
+
+  $examid =  $_GET['examid'] ;
+  $examname =  $_GET['examname'] ;
+
+  $sqla = "SELECT student_id, attended FROM  exam_student_status WHERE exam_id ='$examid' 
+           ORDER BY student_id ASC";
+
+  $resulta = mysqli_query($conn, $sqla);
 
  ?>
 
@@ -145,6 +154,8 @@ li a:hover:not(.active) {
         </form>
     </div>
 
+    <h5> 	&nbsp;&nbsp; <?=$examname?> </h5>
+
     <div class="leftside">
 
         <div class="top_left">
@@ -198,22 +209,25 @@ li a:hover:not(.active) {
             <p>Attending Student list</p> <br><br>
 
             <table  class="top_right_table" >
-            <tr>
-                <td>Student 1</td>
-                <td>Not Complited</td>
+            <?php   
+                $length = mysqli_num_rows($resulta); 
+                $length++; 
+            ?>
+                <tbody>
+                
+                <?php for ($i=1; $i < $length; $i++) {  ?> 
+            
+                <tr>
+                <?php $rowa  = mysqli_fetch_assoc($resulta); ?>
+                    <td>Student <?=$i?></td>
+                    <td><?=$rowa['attended']?></td>
 
-            </tr>
-            <tr>
-                <td>Student 2</td>
-                <td>Complited</td>
+                </tr>
+                <?php } ?>	
 
-            </tr>
-            <tr>
-                <td>Student 3</td>
-                <td>Not Complited</td>
+                </tbody>
 
-            </tr>
-        </table>
+            </table>
         </div><!-- right -->
 
         <div class="bottem_button">

@@ -67,6 +67,7 @@ CREATE TABLE `db_test`.`exam_student_status` (
 	`exam_id` INT(5) NOT NULL , 
 	`student_id` INT(5) NOT NULL , 
 	`status` ENUM('Pending','Attended') NOT NULL , 
+	`attended` ENUM('Pending','Attended','Complete') NOT NULL , 
 	PRIMARY KEY (`exam_id`, `student_id`)) ENGINE = InnoDB;
 
 ALTER TABLE `exam_student_status` ADD FOREIGN KEY (`exam_id`) REFERENCES `exam`(`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;

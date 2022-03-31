@@ -7,11 +7,18 @@
     echo "Connection Failed !";
     exit();
   }
+  $_SESSION['examname'];
   $studentid = $_SESSION['studentid'];
   $examid = $_SESSION['examid'];
 
   $abc = "SELECT * FROM  question WHERE exam_id ='$examid' ORDER BY question_id ASC";
   $result = mysqli_query($conn, $abc);
+
+  $sqlup = " UPDATE exam_student_status SET attended = 'Attended'
+             WHERE exam_id = '$examid' AND student_id = '$studentid' ";
+
+  mysqli_query($conn, $sqlup);
+
 
  ?>
 <!DOCTYPE html>

@@ -38,8 +38,8 @@ for ($i=0; $i < $lengtha; $i++) {
     $rowa  = mysqli_fetch_assoc($resulta); 
     $sid = $rowa['student_id'];
 
-    $sqlin = "INSERT INTO exam_student_status (exam_id, student_id, exam_student_status.status) 
-    VALUES ('$exam_id', '$sid', 'Pending')";
+    $sqlin = "INSERT INTO exam_student_status (exam_id, student_id, exam_student_status.status , attended) 
+    VALUES ('$exam_id', '$sid', 'Pending', 'Pending')";
 
     mysqli_query($conn, $sqlin);
 
