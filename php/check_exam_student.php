@@ -16,15 +16,18 @@ $row  = mysqli_fetch_assoc($result);
 $examid =  $row['exam_id'] ; 
 $_SESSION['examid'] = $row['exam_id'] ; 
 
-$sqlsta = "SELECT exam_student_status.status FROM  exam_student_status WHERE exam_id = '$examid'";
+$sqlsta = "SELECT exam_student_status.status FROM  exam_student_status WHERE exam_id = '$examid' 
+           AND student_id = '$studentid' ";
+           
 $resultsta = mysqli_query($conn, $sqlsta);
 $rowsta  = mysqli_fetch_assoc($resultsta);  
 
-if ( $rowsta['status'] == "Pending") {
+if ( $rowsta['status'] === "Pending") {
     header("Location: ../student_single_exam.php");
 }
-elseif( $rowsta['status'] == "Attended"){
+else if( $rowsta['status'] === "Attended"){
     header("Location: ../student_exam_results.php?examid=$examid & studentid=$studentid");
+
 }else{
     header("Location: ../student_exam.php");
 }

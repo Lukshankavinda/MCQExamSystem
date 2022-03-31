@@ -25,8 +25,7 @@
                 `answer_2`,
                 `answer_3`, 
                 `answer_4`, 
-                `right_answer`, 
-                `mark`  )
+                `right_answer`)
              VALUES (
                  NULL, 
                  '$exid',
@@ -35,12 +34,10 @@
                  '$answer2',
                  '$answer3',
                  '$answer4',
-                 '$right_answer',
-                 '5'    )";
+                 '$right_answer')";
 
     if(mysqli_query($conn, $sql)){
 
-        date_default_timezone_set('Asia/Kolkata');
         $date = date('y-m-d h:i:s');
         
         $sqlup = " UPDATE exam_status SET last_update = '$date' 

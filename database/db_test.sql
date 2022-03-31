@@ -96,8 +96,7 @@ CREATE TABLE `db_test`.`question` (
 	`answer_2` VARCHAR(50) NOT NULL , 
 	`answer_3` VARCHAR(50) NOT NULL , 
 	`answer_4` VARCHAR(50) NOT NULL , 
-	`right_answer` ENUM('01','02','03','04') NOT NULL , 
-	`mark` INT(3) NOT NULL 
+	`right_answer` ENUM('01','02','03','04') NOT NULL 
 	PRIMARY KEY(`question_id`)) ENGINE = InnoDB;
 ​
 ALTER TABLE `question` ADD FOREIGN KEY (`exam_id`) REFERENCES `exam`(`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;

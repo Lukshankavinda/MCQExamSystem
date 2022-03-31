@@ -9,6 +9,23 @@
            ORDER BY student_id ASC";
 
   $resulta = mysqli_query($conn, $sqla);
+  $length = mysqli_num_rows($resulta); 
+
+  $sqlc = "SELECT  attended FROM  exam_student_status WHERE attended ='Complete'";
+
+  $resultc = mysqli_query($conn, $sqlc);
+  $lengthc = mysqli_num_rows($resultc); 
+
+  $sqlb = "SELECT exam_start, exam_duration FROM  exam WHERE exam_id ='$examid' ";
+
+  $resultb = mysqli_query($conn, $sqlb);
+  $rowb  = mysqli_fetch_assoc($resultb);
+  $exam_start = $rowb['exam_start'];
+  $exam_duration = $rowb['exam_duration'];
+
+  $secs = strtotime($exam_duration)-strtotime("00:00:00");
+  $exam_end = date("Y-m-d H:i:s",strtotime($exam_start)+$secs);
+
 
  ?>
 
@@ -159,13 +176,16 @@ li a:hover:not(.active) {
     <div class="leftside">
 
         <div class="top_left">
-            <P>Exam Complited</P>
+            <P>Exam Complited</P><br>
+
+            <h1 class="text-center"><b><?=$lengthc?>/<?=$length?></b></h1>
+
             <h5 class="text-center">Time Left :</h5>
             <h5 class="text-center" id="demo"></h5>
     
             <script>
                 // Set the date we're counting down to
-                var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+                var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
@@ -196,9 +216,11 @@ li a:hover:not(.active) {
         </div><!--  top left-->
 
         <div class="bottem_left">
-                <p>Exam started time <br>
-                   Exam ending time
-                </p>
+                <br>
+                <p><b> Exam started time  &nbsp;&nbsp; <?=$exam_start?> <br><br>
+                       Exam ending time  &nbsp;&nbsp; <?=$exam_end?>
+                </b></p>
+                <br>
         </div><!-- bottem left  -->
 
     </div>
@@ -209,13 +231,14 @@ li a:hover:not(.active) {
             <p>Attending Student list</p> <br><br>
 
             <table  class="top_right_table" >
-            <?php   
-                $length = mysqli_num_rows($resulta); 
-                $length++; 
-            ?>
                 <tbody>
                 
-                <?php for ($i=1; $i < $length; $i++) {  ?> 
+                <?php  
+
+                $length++; 
+                for ($i=1; $i < $length; $i++) {  
+
+                ?> 
             
                 <tr>
                 <?php $rowa  = mysqli_fetch_assoc($resulta); ?>

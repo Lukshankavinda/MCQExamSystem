@@ -30,15 +30,10 @@ if (!$conn) {
 
     }
 
-    $sqlup = " UPDATE exam_student_status SET exam_student_status.status = 'Attended' 
+    $sqlup = " UPDATE exam_student_status SET exam_student_status.status = 'Attended', exam_student_status.attended = 'Complete'
                WHERE student_id = '$studentid' AND exam_id = '$examid' ";
 
     mysqli_query($conn, $sqlup);
-
-    $sqlupa = " UPDATE exam_student_status SET attended = 'Complete'
-                WHERE exam_id = '$examid' AND student_id = '$studentid' ";
-
-    mysqli_query($conn, $sqlupa);
 
     header("Location: ../student_exam_results.php?examid=$examid & studentid=$studentid");
 

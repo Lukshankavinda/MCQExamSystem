@@ -120,6 +120,8 @@ li a:hover:not(.active) {
 
           <div class="top_left">
               <P>Exam Complited</P>
+              <?php include "php/count_result.php";?>
+
           </div><!--  top left-->
 
           <div class="bottem_left">
