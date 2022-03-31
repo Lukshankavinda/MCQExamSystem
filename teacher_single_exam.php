@@ -3,6 +3,8 @@
   include "db_conn.php";
   include "php/read_teacher_single_exam.php";
 
+  $_SESSION['examid'] 
+
  ?>
 <!DOCTYPE html>
 <html>
