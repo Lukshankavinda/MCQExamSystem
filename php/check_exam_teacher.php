@@ -23,7 +23,7 @@ $rowsta  = mysqli_fetch_assoc($resultsta);
 //echo $rowsta['status'];
 
 if ( $rowsta['status'] == "Draft") {
-    header("Location: ../teacher_single_exam.php");
+    header("Location: ../teacher_single_exam.php?examid=$examid ");
 }
 elseif( $rowsta['status'] == "Published"){
     header("Location: ../teacher_monitor_started_exam.php?examid=$examid & examname=$examname");

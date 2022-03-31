@@ -24,5 +24,5 @@ $sqlc = "INSERT INTO exam_status(exam_id, teacher_id, last_update, exam_status.s
 mysqli_query($conn, $sqlc);
 
 $_SESSION['examname'] = $ename;
-header("Location: ../teacher_single_exam.php");
+header("Location: ../teacher_single_exam.php?examid=$eid ");
 ?>
